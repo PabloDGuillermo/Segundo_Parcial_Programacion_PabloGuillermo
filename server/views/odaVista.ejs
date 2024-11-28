@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de obras de arte</title>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+    <button id="botonCrear">Crear obra de arte</button>
+    <div id="divListadoDeObrasDeArte">
+        <% obras.forEach(obra => { %>
+        <div class="divTarjetaObraDeArte card">
+          <h5 class="card-title">Nombre: <%= obra.nombre %></h5>
+          <p class="card-text">Año de creación: <%= obra.anioDeCreacion %></p>
+          <p class="card-text">Tipo de obra: <%= obra.tipo %></p>
+          <img src="/obras/<%= obra.foto %>" alt="">
+          <span><button id="botonModificar">Modificar obra de arte</button><button id="botonEliminar">Eliminar obra de arte</button></span>
+        </div>
+        <% }) %>
+    </div>
+  </body>
+</html>
